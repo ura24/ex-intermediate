@@ -19,4 +19,8 @@ public class TeamService {
     public List<Team> showList() {
         return teamRepository.findAll();
     }
+
+    public Team showDetail(Integer id) {
+        return teamRepository.findById(id);
+    }
 }

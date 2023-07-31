@@ -32,10 +32,10 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
-    public String getheadquarters() {
+    public String getHeadquarters() {
         return headquarters;
     }
-    public void setheadquarters(String headquarters) {
+    public void setHeadquarters(String headquarters) {
         this.headquarters = headquarters;
     }
     public String getInauguration() {

@@ -24,4 +24,11 @@ public class TeamController {
         model.addAttribute("teamList", teamList);
         return "list";
     }
+
+    @GetMapping("/detail")
+    public String detail(Integer id, Model model) {
+        Team team = teamService.showDetail(id);
+        model.addAttribute("team", team);
+        return "detail";
+    }
 }
