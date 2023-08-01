@@ -22,13 +22,13 @@ public class TeamController {
     public String index(Model model) {
         List<Team> teamList = teamService.showList();
         model.addAttribute("teamList", teamList);
-        return "list";
+        return "exam01/list";
     }
 
     @GetMapping("/detail")
     public String detail(Integer id, Model model) {
         Team team = teamService.showDetail(id);
         model.addAttribute("team", team);
-        return "detail";
+        return "exam01/detail";
     }
 }
