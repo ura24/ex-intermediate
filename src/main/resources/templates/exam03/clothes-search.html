@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>衣類検索</h1>
+    <form action="#" th:action="@{/exam03/search}" method="post">
+        <label for="gender">性別：
+            <input type="radio" name="gender" id="gender" th:each="gender, status: ${genderList}"
+                th:value="${status.index}"
+                th:checked="${selectedGender == null ? status.index == 0 : selectedGender == status.index}"
+                th:text="${gender}">
+        </label><br>
+        <label for="color">色　：
+            <select name="color" id="color">
+                <option value="color" th:each="color: ${colorList}" th:value="${color}" th:text="${color}"
+                    th:selected="${selectedColor == color}">赤</option>
+            </select>
+        </label><br>
+        <button type="submit">検索</button>
+    </form>
+    <table th:each="clothes: ${clothesList}" border="1">
+        <tr>
+            <th>ジャンル</th>
+            <td th:text="${clothes.genre}"></td>
+        </tr>
+        <tr>
+            <th>サイズ</th>
+            <td th:text="${clothes.size}"></td>
+        </tr>
+        <tr>
+            <th>価格</th>
+            <td th:text="${clothes.price}"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
